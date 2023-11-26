@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="jquery.min.js"></script>
+	<!-- <script src="specificsize.js"></script> -->
+	<script src="assets/specificsize.min.js"></script>
+
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		.listspetific {
+			background: #a0e9c7;
+			padding-top: 15px;
+			padding-bottom: 0px;
+			max-width: 500px;
+			list-style: none;
+    		padding-left: 0px;
+		}
+		.listspetific li {
+			padding-left: 15px;
+    		padding-right: 15px;
+    		margin-bottom: 15px;
+		}
+		.listspetific li > div {
+			border: 1px solid #a0bde9;
+			padding: 7px 13px;
+			background: #d6ffe3;
+		}
+		.block {
+			padding-left: 15px;
+    		padding-right: 15px;
+		}
+		.block-content {
+			margin-left: -15px;
+    		margin-right: -15px;
+		}
+	</style>
+</head>
+<body>
+	<div class="block">
+		<div class="block-content">
+			<ul class="listspetific js-listspetific" data-countmaxline="2">
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="block">
+		<div class="block-content">
+			<ul class="listspetific js-listspetific">
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="block">
+		<div class="block-content">
+			<ul class="listspetific js-listspetific_click">
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+				<li><div>Test text</div></li>
+			</ul>
+			<div class="show" style="background: red;">Прказать</div>
+			<div class="hide" style="background: red;">Скрыть</div>
+		</div>
+
+		<style>
+			.show, .hide { display: none; }
+			.show.specificsize_click, .hide.specificsize_click { display:  block; }
+		</style>
+	</div>
+	
+	<script type="text/javascript">
+        var elem = $('.js-listspetific').specificsize();
+
+        elem.each(function(){
+        	this.updateFun({
+        		countMaxLine: 3,
+        	});
+        });
+
+        var elem_click = $('.js-listspetific_click').specificsize({
+        	media: {
+		        900: 2,
+		        767: 1,
+		        500: 5,
+		    },
+        	click: {
+		        classShow: 'show',
+		        classHide: 'hide',
+		    },
+        });
+	</script>
+</body>
+</html>
