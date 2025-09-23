@@ -409,7 +409,7 @@
             }
 
             if (options.resize) {
-                $(window).resize(function() {
+                $(window).on('resize', function() {
                     main();
                 });
             }
